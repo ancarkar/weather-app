@@ -58,7 +58,12 @@
   color: #282846;
 }
 
-a:hover {
+.celsius:hover {
+  font-size: 32px;
+  color: #282846;
+}
+
+.fahrenheit:hover {
   font-size: 32px;
   color: #282846;
 }
@@ -84,4 +89,21 @@ ul {
   margin-top: 15px;
   padding-left: 0;
   color: #282846;
+}
+
+.openSource {
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.openSource a {
+  text-decoration: none;
+  color: #a4ebf3;
+  font-weight: lighter;
+}
+
+.openSource a:hover {
+  text-decoration: none;
+  color: #a4ebf3;
+  font-weight: lighter;
 }
