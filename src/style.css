@@ -1,3 +1,26 @@
+h1 {
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0;
+  padding-bottom: 20px;
+  color: #aaaaaa;
+}
+
+p .wind {
+  position: relative;
+  left: 15px;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+  margin-top: 15px;
+  padding-left: 0;
+  color: #282846;
+}
+
 .card {
   margin-top: 50px;
   padding: 30px 30px 20px 30px;
@@ -65,29 +88,6 @@
 
 .fahrenheit:hover {
   font-size: 32px;
-  color: #282846;
-}
-
-h1 {
-  margin-bottom: 0;
-}
-
-p {
-  margin-top: 0;
-  padding-bottom: 20px;
-  color: #aaaaaa;
-}
-
-p .wind {
-  position: relative;
-  left: 15px;
-}
-
-ul {
-  list-style: none;
-  text-align: center;
-  margin-top: 15px;
-  padding-left: 0;
   color: #282846;
 }
 
