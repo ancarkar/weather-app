@@ -73,17 +73,18 @@ ul {
 .celsius {
   text-decoration: none;
   color: #282846;
+  font-size: 32px;
 }
 
 .fahrenheit {
-  font-size: 15px;
+  font-size: 16px;
   text-decoration: none;
   color: #282846;
 }
 
 .celsius:hover {
-  font-size: 32px;
   color: #282846;
+  font-size: 16px;
 }
 
 .fahrenheit:hover {
