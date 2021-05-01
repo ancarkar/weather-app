@@ -47,8 +47,14 @@ let dayTime = document.querySelector("#date");
 let currentTime = new Date();
 dayTime.innerHTML = displayDate(currentTime);
 
+
 function showResults(response) {
   document.querySelector("#city").innerHTML = response.data.name;
+
+  document.querySelector("#icon").setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+  document.querySelector("#description").innerHTML = response.data.weather[0].main;
+
   document.querySelector("#degree").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -58,8 +64,6 @@ function showResults(response) {
   document.querySelector("#windspeed").innerHTML = Math.round(
     response.data.wind.speed
   );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
 }
 
 function search(city) {
@@ -96,9 +100,11 @@ currentLocationButton.addEventListener("click", handleCurrentPosition);
 
 search("London");
 
-///// show current location //// work in progress
 
-/////navigator.geolocation.getCurrentPosition(handlePosition);
+/////icon;
+
+////let iconElement = document.querySelectorelector("#icon");
+
 
 //// Degree to Fahrenheit and vice versa
 
