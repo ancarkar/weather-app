@@ -53,7 +53,7 @@ function showResults(response) {
 
   document.querySelector("#icon").setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
-  document.querySelector("#description").innerHTML = response.data.weather[0].main;
+  document.querySelector("#description").innerHTML = response.data.weather[0].description;
 
   document.querySelector("#degree").innerHTML = Math.round(
     response.data.main.temp
