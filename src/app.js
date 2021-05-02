@@ -64,6 +64,8 @@ function showResults(response) {
   document.querySelector("#windspeed").innerHTML = Math.round(
     response.data.wind.speed
   );
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 function search(city) {
@@ -98,30 +100,29 @@ function handleCurrentPosition(event) {
 let currentLocationButton = document.querySelector("#here-button");
 currentLocationButton.addEventListener("click", handleCurrentPosition);
 
-search("London");
-
-
-/////icon;
-
-////let iconElement = document.querySelectorelector("#icon");
-
-
 //// Degree to Fahrenheit and vice versa
 
 function convertToCelsius(event) {
   event.preventDefault();
   let degreeElement = document.querySelector("#degree");
-  degreeElement.innerHTML = 18;
+  degreeElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 function convertToFahrenheit(event) {
   event.preventDefault();
+  let fahrenheitUnit = (celsiusTemperature * 9) / 5 + 32;
   let degreeElement = document.querySelector("#degree");
-  degreeElement.innerHTML = 64;
+  degreeElement.innerHTML = Math.round(fahrenheitUnit);
 }
+
+let celsiusTemperature = null;
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", convertToCelsius);
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", convertToFahrenheit);
+
+
+search("London");
+
