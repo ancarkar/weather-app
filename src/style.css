@@ -1,6 +1,7 @@
 .container {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/008/460/original/Abstract.png?1620073402");
   background-size: cover;
+  border-radius: 10px;
 }
 
 h1 {
@@ -38,6 +39,7 @@ ul {
   font-family: "Sora", sans-serif;
   margin: 0 auto;
   margin-top: 40px;
+  border-radius: 10px;
 }
 
 .searchButton .btn-primary {
@@ -106,19 +108,22 @@ ul {
   opacity: 0.4;
 }
 
-.openSource {
+.openSource p {
+  color: #a4ebf3;
   font-weight: lighter;
   font-size: 14px;
+  text-align: center;
 }
 
 .openSource a {
   text-decoration: none;
   color: #a4ebf3;
   font-weight: lighter;
+  text-align: center;
 }
 
 .openSource a:hover {
   text-decoration: none;
-  color: #a4ebf3;
+  color: #aaaaaa;
   font-weight: lighter;
 }
