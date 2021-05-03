@@ -104,6 +104,8 @@ currentLocationButton.addEventListener("click", handleCurrentPosition);
 
 function convertToCelsius(event) {
   event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
   let degreeElement = document.querySelector("#degree");
   degreeElement.innerHTML = Math.round(celsiusTemperature);
 }
@@ -111,6 +113,8 @@ function convertToCelsius(event) {
 function convertToFahrenheit(event) {
   event.preventDefault();
   let fahrenheitUnit = (celsiusTemperature * 9) / 5 + 32;
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
   let degreeElement = document.querySelector("#degree");
   degreeElement.innerHTML = Math.round(fahrenheitUnit);
 }
