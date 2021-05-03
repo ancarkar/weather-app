@@ -1,3 +1,8 @@
+.container {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/008/460/original/Abstract.png?1620073402");
+  background-size: cover;
+}
+
 h1 {
   margin-bottom: 0;
 }
@@ -26,12 +31,13 @@ ul {
 }
 
 .card {
-  margin-top: 40px;
   padding: 30px 30px 20px 30px;
   width: 500px;
   font-family: "Barlow Semi Condensed", sans-serif;
   font-family: "Poppins", sans-serif;
   font-family: "Sora", sans-serif;
+  margin: 0 auto;
+  margin-top: 40px;
 }
 
 .searchButton .btn-primary {
@@ -94,6 +100,10 @@ ul {
   color: #282846;
   font-size: 32px;
   text-decoration: none;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.4;
 }
 
 .openSource {
