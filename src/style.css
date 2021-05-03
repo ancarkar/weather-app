@@ -78,6 +78,7 @@ ul {
   text-decoration: none;
   color: #282846;
   font-size: 32px;
+  cursor: default;
 }
 
 .active:hover {
@@ -89,6 +90,12 @@ ul {
 .fahrenheit {
   color: #282846;
   font-size: 16px;
+  text-decoration: none;
+}
+
+.fahrenheit:hover {
+  color: #282846;
+  font-size: 32px;
   text-decoration: none;
 }
 
