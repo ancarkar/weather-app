@@ -91,39 +91,50 @@ function getForecast(coordinates) {
   }
 
 
-function showForecast(response){
-
+function showForecast(response) {
   let sixDayForecast = response.data.daily;
-
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row row-cols-3">`;
-  sixDayForecast.forEach(function(forecastDay, index){
+  sixDayForecast.forEach(function (forecastDay, index) {
     if (index < 6) {
-    forecastHTML = forecastHTML + `
-                                <div class="col border-end border-bottom">
-                                <ul>
-                                <li class="weather-forecast-day">
-                                    ${formatDay(forecastDay.dt)}
-                    
-                                </li>
-                                <li>
-                                    <img
-                                      src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
-                                      alt=""
-                                      />
-                                </li>
-                                <li class="weather-forecast-temperature">
-                                    <span class="weather-forecast-temperature-max"> ${Math.round(forecastDay.temp.max)}°</span>
-                                    <span class="weather-forecast-temperature-min"> ${Math.round(forecastDay.temp.min)}°</span>
-                                </li>
-                                </ul>
-                               </div>`;
+      let classes = "";
+      if (index % 3 !== 2) {
+        classes += "border-end ";
+      }
+      if (index < 3) {
+        classes += "border-bottom";
+      }
+      forecastHTML =
+        forecastHTML +
+        `
+        <div class="col ${classes}">
+        <ul>
+        <li class="weather-forecast-day">
+            ${formatDay(forecastDay.dt)}
+        </li>
+        <li class="weather-forecast-img">
+            <img
+              src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"
+              alt=""
+              />
+        </li>
+        <li class="weather-forecast-temperature">
+            <span class="weather-forecast-temperature-max"> ${Math.round(
+              forecastDay.temp.max
+            )}°</span>
+            <span class="weather-forecast-temperature-min"> ${Math.round(
+              forecastDay.temp.min
+            )}°</span>
+        </li>
+        </ul>
+        </div>`;
     }
-    })
-  forecastHTML = forecastHTML +`</div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
 
 function search(city) {
   let apiKey = "5d5d96fb0e392bc7e857fc19522c1485";
