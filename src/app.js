@@ -68,6 +68,36 @@ function showResults(response) {
   celsiusTemperature = response.data.main.temp;
 }
 
+//// forecast////
+function showForecast(){
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"];
+
+  let forecastHTML = `<div class="row row-cols-3">`;
+  days.forEach(function(day){
+    forecastHTML = forecastHTML + `
+                                <div class="col border-end border-bottom">
+                                <ul>
+                                <li class="weather-forecast-day">
+                                    ${day}
+                                </li>
+                                <li>
+                                    <i class="fas fa-cloud-sun">
+                                    </i>
+                                </li>
+                                <li class="weather-forecast-temperature">
+                                    <span class="weather-forecast-temperature-max"> 20° </span>
+                                    <span class="weather-forecast-temperature-min"> 8° </span>
+                                </li>
+                                </ul>
+                               </div>`;
+    })
+
+  forecastHTML = forecastHTML +`</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+
 function search(city) {
   let apiKey = "5d5d96fb0e392bc7e857fc19522c1485";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -121,6 +151,8 @@ function convertToFahrenheit(event) {
 
 let celsiusTemperature = null;
 
+
+
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", convertToCelsius);
 
@@ -129,4 +161,5 @@ fahrenheit.addEventListener("click", convertToFahrenheit);
 
 
 search("London");
+showForecast(); 
 
