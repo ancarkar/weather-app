@@ -16,11 +16,6 @@ p {
   color: #aaaaaa;
 }
 
-p .date {
-  position: relative;
-  top: 1px;
-}
-
 p .wind {
   position: relative;
   left: 15px;

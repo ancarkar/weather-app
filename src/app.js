@@ -96,7 +96,7 @@ function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row row-cols-3">`;
   sixDayForecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index > 0 && index < 7) {
       let classes = "";
       if (index % 3 !== 2) {
         classes += "border-end ";
