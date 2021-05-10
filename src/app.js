@@ -98,7 +98,7 @@ function showForecast(response) {
   sixDayForecast.forEach(function (forecastDay, index) {
     if (index > 0 && index < 7) {
       let classes = "";
-      if (index % 4 !== 3) {
+      if (index % 3 === 1 || index % 3 === 2) {
         classes += "border-end ";
       }
       if (index < 4) {
